@@ -1,5 +1,7 @@
 # eng-zap-challenge-python
 
+This getting started guide is avaiable for linux OS (Ubuntu/Debian).
+
 ### Clone the repository into your PC
 ```sh
 $ git clone https://github.com/BZ3R0/eng-zap-challenge-python.git
@@ -10,12 +12,13 @@ $ git clone https://github.com/BZ3R0/eng-zap-challenge-python.git
 - Get inside the repository directory
 
 ```sh
-$ cd eng-zap-challenge-python
+$ cd <path-to-project>/eng-zap-challenge-python
 ```
 
 - Install virutalenv (python virtual environment)
 
 ```sh
+$ sudo apt-get install virtualenv
 $ virtualenv -p python3 venv
 ```
 
@@ -37,7 +40,7 @@ $ pip3 install -r requirements.txt
 - Get into your project directory
 
 ```sh
-$ cd <path-to-directory>/eng-zap-chanllenge-python
+$ cd <path-to-project>/eng-zap-chanllenge-python
 ```
 
 - Start the virtual environment
