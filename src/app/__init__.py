@@ -1,22 +1,22 @@
 from flask import Flask
 from flask_restful import Api
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 app.config.from_object('instance.config')
 
 api = Api(app)
+db = SQLAlchemy(app)
 
 # Routes
-from .views.api.building import ListBuldings, ListBuldingsElegible, ListBuldingsNotElegible
-api.add_resource(ListBuldings, '/api/lista_imoveis')
-api.add_resource(ListBuldingsElegible, '/api/lista_imoveis_elegiveis')
-api.add_resource(ListBuldingsNotElegible, '/api/lista_imoveis_nao_elegiveis')
+from .views.api.conta import CadastroPessoa, CadastroConta, DepositoConta, ConsultaConta, DebitoConta, BloqueioConta, ExtratoConta
+api.add_resource(CadastroPessoa, '/api/cadastro_pessoa')
+api.add_resource(CadastroConta, '/api/cadastro_conta')
+api.add_resource(DepositoConta, '/api/deposito_conta')
+api.add_resource(ConsultaConta, '/api/consulta_conta')
+api.add_resource(DebitoConta, '/api/debito_conta')
+api.add_resource(BloqueioConta, '/api/bloqueio_conta')
+api.add_resource(ExtratoConta, '/api/extrato_conta')
 
-from .views.api.sales import ListBuildingsSaleZap, BuildingOffMinimalValue
-api.add_resource(ListBuildingsSaleZap, '/api/zap/vendas')
-api.add_resource(BuildingOffMinimalValue, '/api/zap/boundingbox')
-
-from .views.api.rental import ListBuildingRentalVR, BuildingBBMaximunValue
-api.add_resource(ListBuildingRentalVR, '/api/vr/aluguel')
-api.add_resource(BuildingBBMaximunValue, '/api/vr/boundingbox')
+from app.models import tables
