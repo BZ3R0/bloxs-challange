@@ -62,64 +62,49 @@ $ python3 run.py
 
 - Access endpoints for test
 
-```
-# localhost:5000/api/cadastro_pessoa
-    Cadastra uma pessoa ou mais
-
-    ```sh
+```sh
+# localhost:5000/api/cadastro_pessoa - Cadastra uma pessoa ou mais
     {
         "persons": [
             { "name": string, "cpf": string, "dataNascimento": string }
         ]
     }
-    ```
+
 
 # localhost:5000/api/cadastro_conta - Cadastra uma conta por usuário ou mais
-    ```sh
-        {
-            "contas": [
-                { "idPessoa": int, "saldo": float, "limiteSaqueDiario": float, "tipoConta": int}
-            ]
-        }
-    ```
+    {
+        "contas": [
+            { "idPessoa": int, "saldo": float, "limiteSaqueDiario": float, "tipoConta": int}
+        ]
+    }
 
 # localhost:5000/api/deposito_conta - Realiza um crédito em uma conta específica
-    ```sh
-        {
-            "deposito":
-                { "idConta": int, "valorDeposito": float}
-        }
-    ```
+    {
+        "deposito":
+            { "idConta": int, "valorDeposito": float}
+    }
 
 # localhost:5000/api/consulta_conta - Realiza a consulta de uma conta específica
-    ```sh
-        {
-            "conta":
-                { "idConta": int}
-        }
-    ```
+    {
+        "conta":
+            { "idConta": int}
+    }
 
 # localhost:5000/api/debito_conta - Realiza o débito em uma conta específica
-    ```sh
-        {
-            "debito":
-                { "idConta": int, "valorDebito": float}
-        }
-    ```
+    {
+        "debito":
+            { "idConta": int, "valorDebito": float}
+    }
 
 # localhost:5000/api/bloqueio_conta - Bloqueia uma conta
-    ```sh
-        {
-            "conta":
-                { "idConta": int}
-        }
-    ```
+    {
+        "conta":
+            { "idConta": int}
+    }
     
 # localhost:5000/api/extrato_conta - Exibe o extrato de transações de uma conta específica
-    ```sh
-            {
-                "conta":
-                    { "idConta": int}
-            }
-    ```
+    {
+        "conta":
+            { "idConta": int}
+    }
 ```
